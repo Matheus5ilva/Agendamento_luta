@@ -1,0 +1,54 @@
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/res/images/bg.jpg);">
+					<a href="/"><span class="login100-form-title-1">
+						Sistema de Luta
+                    </span></a>
+                    <span style="color: #fff;">
+                        Agendamento - Escolher a horario
+                    </span>
+				</div>
+				{if="$msgError != ''"}
+                <div class="alert alert-danger alert-dismissible" style="margin:10px">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p>{$msgError}</p>
+                </div>
+                {/if}
+				<form action="/checkin/{$user.id_user}/{$lession}" method="POST" class="login100-form validate-form">
+					<input type="hidden" name="id_user" value="{$user.id_user}">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Nome</span>
+						<input class="input100" type="text" disabled name="name_user" value="{$user.name_user}">
+						<span class="focus-input100"></span>
+					</div>
+					{loop="$class"}
+					<input type="hidden" name="id_class" value="{$value.id_class}">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Aula</span>
+						<input class="input100" type="text" disabled name="name_class" value="{$value.name_class}">
+						<span class="focus-input100"></span>
+					</div>
+					{/loop}
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+                        <span class="label-input100">Horario</span>
+                        <select class="select100" name="id_date_hour_class" id="id_date">
+							<option value="id_date_hour_class">Escolha a hora uma aula...</option>
+							{loop="$date"}
+							<option value="{$value.id_date_hour_class}">{function="formatDate($value.date_class)"} - {$value.hour_class} - {$value.name_user}</option>
+							{/loop}
+                        </select>
+						<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Check-in
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	

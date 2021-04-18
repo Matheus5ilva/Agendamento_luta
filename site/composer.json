@@ -1,0 +1,19 @@
+{
+    "name": "matheus5ilva/sistema",
+    "authors": [
+        {
+            "name": "Matheus Alexandre",
+            "email": "matheus0verfl0w27@gmail.com"
+        }
+    ],
+    "require": {
+    	"phpmailer/phpmailer":"5.*",
+    	"slim/slim":"2.*",
+    	"rain/raintpl":"3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sistema\\": "vendor\\sistema\\src"
+        }
+    }
+}

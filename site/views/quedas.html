@@ -1,0 +1,48 @@
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url(/res/images/bg.jpg);">
+                    <a href="/"><span class="login100-form-title-1">
+                            Sistema de Luta
+                        </span></a>
+                    <span style="color: #fff;">
+                        Suas Aulas - Quedas
+                    </span>
+                    <span style="color: #fff;">
+                        Total de {$total} lutas
+                    </span>
+                </div>
+
+
+                <div class="menu100-form validate-form">
+                    {loop="$class"}
+                    <div class="flex-sb-m w-full p-b-30">
+                        <div class="contact100-form-checkbox">
+                            <a href="#" class="txt1">
+                                {$value.name_class}
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#" class="txt1">
+                                {function="formatDate($value.date_class)"} - {$value.hour_class}
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="txt1">
+                                {$value.qtd_lutas}
+                            </a>
+                        </div>
+                        <div>
+                            <a href="/quedas/{$user.id_user}/{$value.id_check_in}/create" class="btn btn-sm bg-success" style="color: #fff;">
+                                Adicionar Lutas
+                            </a>
+                        </div>
+                    </div>
+                    {/loop}
+                </div>
+            </div>
+        </div>
+    </div>

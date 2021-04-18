@@ -1,0 +1,40 @@
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form-title" style="background-image: url(/res/images/bg.jpg);">
+                    <a href="/"><span class="login100-form-title-1">
+                            Sistema de Luta
+                        </span></a>
+                    <span style="color: #fff;">
+                        Suas Aulas
+                    </span>
+                </div>
+
+
+                <div class="menu100-form validate-form">
+                    {loop="$class"}
+                    <div class="flex-sb-m w-full p-b-30">
+                        <div class="contact100-form-checkbox">
+                            <a href="#" class="txt1">
+                                {$value.name_class}
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#" class="txt1">
+                                {function="formatDate($value.date_class)"} - {$value.hour_class}
+                            </a>
+                        </div>
+                        <div>
+                            <a href="/checkin/{$value.id_check_in}/delete" class="btn btn-sm bg-danger" style="color: #fff;">
+                                Cancelar
+                            </a>
+                        </div>
+                    </div>
+                    {/loop}
+                </div>
+            </div>
+        </div>
+    </div>

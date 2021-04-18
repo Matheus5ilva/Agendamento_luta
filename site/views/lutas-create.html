@@ -1,0 +1,34 @@
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/res/images/bg.jpg);">
+					<a href="/"><span class="login100-form-title-1">
+						Sistema de Luta
+                    </span></a>
+                    <span style="color: #fff;">
+                        {loop="$checkin"}
+                        Quantidade de lutas do dia {function="formatDate($value.date_class)"} - {$value.hour_class}
+                        
+                    </span>
+                </div>
+                
+                <form action="/quedas/{$user.id_user}/{$value.id_check_in}/create" method="POST" class="login100-form validate-form">
+					<input type="hidden" name="id_check_in" value="{$value.id_check_in}">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Quantidades de Lutas hoje</span>
+						<input class="input100" type="text" name="qtd_lutas">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Salvar
+						</button>
+					</div>
+                </form>
+                {/loop}
+			</div>
+		</div>
+	</div>
+	

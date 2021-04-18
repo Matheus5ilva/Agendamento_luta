@@ -1,0 +1,34 @@
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/res/images/bg.jpg);">
+					<a href="/"><span class="login100-form-title-1">
+						Sistema de Luta
+                    </span></a>
+                    <span style="color: #fff;">
+                        Agendamento - Escolher a aula
+                    </span>
+                </div>
+				<form action="/checkin/{$user.id_user}" method="POST" class="login100-form validate-form">
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+                        <span class="label-input100">Aula</span>
+                        <select class="select100" name="id_class" id="id_class">
+							<option value="">Escolha uma aula...</option>
+							{loop="$class"}
+							<option value="{$value.id_class}">{$value.name_class}</option>
+							{/loop}
+                        </select>
+						<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Check-in
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
